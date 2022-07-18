@@ -1,4 +1,68 @@
-<div class="container">
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input class="search-input" type="text" placeholder="Search City" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
+
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <img src="../assets/images/cold.jpeg" alt="cold" *ngIf="weatherData.main.temp > 15"/>
+    <img src="../assets/images/hot.jpeg" alt="hot" *ngIf="weatherData.main.temp < 15"/>
+
+    <div class="weather-data">
+      <div class="weather-dataLocation">{{ weatherData.name }}</div>
+      <div class="weather-dataTemperature">{{weatherData.main.temp | number: '1.0-0'}}ºC</div>
+    </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-infoLabel">
+      More Information
+    </div>
+    <div class="more-infoContainer">
+      <div class="info-block">
+        <div class="info-blockLabel">
+          <img src="../assets/images/min.png" alt="min" class="info-blockLabelImg">
+          <span class="info-blockLabelSpan">min</span>
+        </div>
+        <div class="info-blockValue">
+          {{ weatherData.main.temp_min | number: '1.0-0' }}ºC
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-blockLabel">
+          <img src="../assets/images/max.png" alt="max" class="info-blockLabelImg">
+          <span class="info-blockLabelSpan">max</span>
+        </div>
+        <div class="info-blockValue">
+          {{ weatherData.main.temp_max | number: '1.0-0' }}ºC
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-blockLabel">
+          <img src="../assets/images/humidity.png" alt="min" class="info-blockLabelImg">
+          <span class="info-blockLabelSpan">humidity</span>
+        </div>
+        <div class="info-blockValue">
+          {{ weatherData.main.humidity }}%
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-blockLabel">
+          <img src="../assets/images/wind.png" alt="min" class="info-blockLabelImg">
+          <span class="info-blockLabelSpan">wind</span>
+        </div>
+        <div class="info-blockValue">
+          {{ weatherData.wind.speed | number: '1.0-0' }}km/h
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
   <div class="upper-data">
     <img src="../assets/images/cold.jpeg" alt="cold" *ngIf="14 > 15"/>
     <img src="../assets/images/hot.jpeg" alt="hot" *ngIf="14 < 15"/>
@@ -54,5 +118,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <router-outlet></router-outlet>
