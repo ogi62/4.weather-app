@@ -1,5 +1,16 @@
 # 4.WeatherApp
 
+Made some begginer weather app with this amazing course i found on youtube ...
+
+This is begginers project with http.get method 
+
+We are using Open Weather Map API ... link : https://rapidapi.com/community/api/open-weather-map/
+
+
+This is the course from Youtube link >>>https://www.youtube.com/watch?v=psZXU8PTAS8&list=PLP0mGsfEDkrO4GTrFrKUil9q0xhZh9XrW&index=2&t=268s
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
 ## Development server
